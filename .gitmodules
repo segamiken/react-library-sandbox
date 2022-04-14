@@ -1,0 +1,3 @@
+[submodule "book-react-typescript/ReactOnTheJob"]
+	path = book-react-typescript/ReactOnTheJob
+	url = https://github.com/oukayuka/ReactOnTheJob.git
