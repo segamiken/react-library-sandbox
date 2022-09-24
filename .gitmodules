@@ -1,3 +1,6 @@
 [submodule "book-react-typescript/ReactOnTheJob"]
 	path = book-react-typescript/ReactOnTheJob
 	url = https://github.com/oukayuka/ReactOnTheJob.git
+[submodule "react-suspense-handson"]
+	path = react-suspense-handson
+	url = https://github.com/uhyo/react-suspense-handson
