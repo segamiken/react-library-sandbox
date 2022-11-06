@@ -1,9 +1,13 @@
 # react-sandbox
 Reactのあれこれを試す場所
 
-1. React Query
-2. Suspense
-3. SWR （WIP）
-4. GraphQL (New)
-5. MSW （New） 
-6. Vite （New）
+1. Context
+2. React Query
+3. Suspense
+---
+今後
+
+4. SWR
+5. GraphQL
+6. MSW
+7. Vite
