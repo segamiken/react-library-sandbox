@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import DivideContext from "./DivideContext";
+import DivideContextWithConstate from "./DivideContextWithConstate";
 import OneContext from "./OneContext";
 import OneContextWithReducer from "./OneContextWithReducer";
 
@@ -21,5 +22,9 @@ root.render(
       useState（ボタンをクリックすると、1つのコンポーネントのみレンダリングされる）
     </h2>
     <DivideContext />
+    <h2>
+      constateを使用（ボタンをクリックすると、1つのコンポーネントのみレンダリングされる）
+    </h2>
+    <DivideContextWithConstate />
   </React.StrictMode>
 );
