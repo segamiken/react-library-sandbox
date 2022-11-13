@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useReducer } from "react";
 import { AppStateStore } from "./AppStateStore";
 import { Article } from "./Article";
 import { GlobalHeader } from "./GlobalHeader";
@@ -48,6 +48,13 @@ const store = new AppStateStore(
 export function App() {
   const dispatch = store.dispatch;
   const appState = store.getState();
+
+  const [, forceUpdate] = useReducer((v) => v + 1, Number.MIN_SAFE_INTEGER);
+  useEffect(() => {
+    const unsubscribe = store.subscribe(forceUpdate);
+
+    return unsubscribe;
+  }, []);
 
   return (
     <dispatchContext.Provider value={dispatch}>
