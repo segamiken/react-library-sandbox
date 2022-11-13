@@ -5,10 +5,11 @@ import { useDispatch } from "./useDispatch";
 export function Article({ id }: { id: string }) {
   console.info("rendering Article component");
 
-  const { articles } = useAppState();
+  const article = useAppState((state) =>
+    state.articles.find((a) => a.id === id)
+  );
   const dispatch = useDispatch();
 
-  const article = articles.find((a) => a.id === id);
   if (!article) {
     return <article>404</article>;
   }

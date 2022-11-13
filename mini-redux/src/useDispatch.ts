@@ -7,6 +7,7 @@ export type AppAction = {
   };
 };
 
+/** React Redux の useDispatch に対応するもの。 */
 export function useDispatch() {
   const store = useAppStateStore();
 
