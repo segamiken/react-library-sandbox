@@ -3,6 +3,8 @@ import { useAppState } from "./useAppState";
 import { useDispatch } from "./useDispatch";
 
 export function Article({ id }: { id: string }) {
+  console.info("rendering Article component");
+
   const { articles } = useAppState();
   const dispatch = useDispatch();
 

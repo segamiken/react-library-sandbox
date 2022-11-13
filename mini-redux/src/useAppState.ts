@@ -1,4 +1,5 @@
-import { createContext, useContext } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { useAppStateStore } from "./useAppStateStore";
 
 export interface AppState {
   articles: {
@@ -11,10 +12,16 @@ export interface AppState {
 export const appStateContext = createContext<AppState | null>(null);
 
 export function useAppState() {
-  const appState = useContext(appStateContext);
-  if (!appState) {
-    throw new Error("Provider で囲んでください");
-  }
+  const store = useAppStateStore();
+
+  const [, forceUpdate] = useReducer((v) => v + 1, Number.MIN_SAFE_INTEGER);
+  useEffect(() => {
+    const unsubscribe = store.subscribe(forceUpdate);
+
+    return unsubscribe;
+  }, [store]);
+
+  const appState = store.getState();
 
   return appState;
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import { useAppStateStore } from "./useAppStateStore";
 
 export type AppAction = {
   type: "like";
@@ -7,15 +7,8 @@ export type AppAction = {
   };
 };
 
-export const dispatchContext = createContext<React.Dispatch<AppAction> | null>(
-  null
-);
-
 export function useDispatch() {
-  const dispatch = useContext(dispatchContext);
-  if (!dispatch) {
-    throw new Error("Provider で囲んでください");
-  }
+  const store = useAppStateStore();
 
-  return dispatch;
+  return store.dispatch;
 }

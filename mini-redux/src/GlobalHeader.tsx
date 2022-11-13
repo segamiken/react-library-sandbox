@@ -2,6 +2,8 @@ import React from "react";
 import { useAppState } from "./useAppState";
 
 export function GlobalHeader() {
+  console.info("rendering GlobalHeader component");
+
   const { articles } = useAppState();
 
   return (
