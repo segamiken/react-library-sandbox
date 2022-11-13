@@ -1,10 +1,15 @@
 # react-sandbox
 Reactのあれこれを試す場所
 
-1. Context（context-sandbox）
-2. Constate（context-constate-sandbox） 
-3. React Query（react-query-sandbox）
-4. Suspense（react-suspense-handson）
+- Context（context-sandbox）
+- Constate（context-constate-sandbox） 
+  - Contextを分けない場合のレンダリングを再現
+  - Contextを分けると、不要なレンダリングを防げることを再現
+  - constateを使用して、楽にContextを分ける
+- Redux
+  - mini-redux
+- React Query（react-query-sandbox）
+- Suspense（react-suspense-handson）
 ---
 今後
 
