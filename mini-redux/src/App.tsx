@@ -1,8 +1,8 @@
-import React, { useEffect, useReducer } from "react";
+import React from "react";
 import { AppStateStore } from "./AppStateStore";
 import { Article } from "./Article";
 import { GlobalHeader } from "./GlobalHeader";
-import { appStateContext } from "./useAppState";
+import { storeContext } from "./useAppStateStore";
 import { dispatchContext } from "./useDispatch";
 
 const store = new AppStateStore(
@@ -46,25 +46,20 @@ const store = new AppStateStore(
 );
 
 export function App() {
+  console.info("rendering App component");
+
+  // dispatch は値が変化しないので、最上位で定義しておいてok。
   const dispatch = store.dispatch;
-  const appState = store.getState();
-
-  const [, forceUpdate] = useReducer((v) => v + 1, Number.MIN_SAFE_INTEGER);
-  useEffect(() => {
-    const unsubscribe = store.subscribe(forceUpdate);
-
-    return unsubscribe;
-  }, []);
 
   return (
-    <dispatchContext.Provider value={dispatch}>
-      <appStateContext.Provider value={appState}>
+    <storeContext.Provider value={store}>
+      <dispatchContext.Provider value={dispatch}>
         <GlobalHeader />
 
         <Article id="1" />
 
         <Article id="2" />
-      </appStateContext.Provider>
-    </dispatchContext.Provider>
+      </dispatchContext.Provider>
+    </storeContext.Provider>
   );
 }

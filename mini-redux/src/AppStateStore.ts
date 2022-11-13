@@ -1,6 +1,11 @@
 import { AppState } from "./useAppState";
 import { AppAction } from "./useDispatch";
 
+/**
+ * インスタンスに、appStat を保持させる。
+ * App コンポーネント から useState を剥がし、再レンダリングを最適化するために誕生したクラス。
+ * initialState と reducer関数を渡すことで、インスタンスを作成できる。
+ */
 export class AppStateStore {
   private listeners: (() => void)[] = [];
 
