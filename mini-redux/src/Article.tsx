@@ -1,19 +1,9 @@
-import React, { useEffect, useReducer } from "react";
+import React from "react";
 import { useAppState } from "./useAppState";
-import { useAppStateStore } from "./useAppStateStore";
 import { useDispatch } from "./useDispatch";
 
 export function Article({ id }: { id: string }) {
   console.info("rendering Article component");
-
-  const store = useAppStateStore();
-
-  const [, forceUpdate] = useReducer((v) => v + 1, Number.MIN_SAFE_INTEGER);
-  useEffect(() => {
-    const unsubscribe = store.subscribe(forceUpdate);
-
-    return unsubscribe;
-  }, [store]);
 
   const { articles } = useAppState();
   const dispatch = useDispatch();

@@ -3,7 +3,6 @@ import { AppStateStore } from "./AppStateStore";
 import { Article } from "./Article";
 import { GlobalHeader } from "./GlobalHeader";
 import { storeContext } from "./useAppStateStore";
-import { dispatchContext } from "./useDispatch";
 
 const store = new AppStateStore(
   (state, action) => {
@@ -48,18 +47,13 @@ const store = new AppStateStore(
 export function App() {
   console.info("rendering App component");
 
-  // dispatch は値が変化しないので、最上位で定義しておいてok。
-  const dispatch = store.dispatch;
-
   return (
     <storeContext.Provider value={store}>
-      <dispatchContext.Provider value={dispatch}>
-        <GlobalHeader />
+      <GlobalHeader />
 
-        <Article id="1" />
+      <Article id="1" />
 
-        <Article id="2" />
-      </dispatchContext.Provider>
+      <Article id="2" />
     </storeContext.Provider>
   );
 }
