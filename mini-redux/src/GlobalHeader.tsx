@@ -4,7 +4,7 @@ import { useAppState } from "./useAppState";
 export function GlobalHeader() {
   console.info("rendering GlobalHeader component");
 
-  const { articles } = useAppState();
+  const articles = useAppState((state) => state.articles);
 
   return (
     <header style={{ padding: 16 }}>
