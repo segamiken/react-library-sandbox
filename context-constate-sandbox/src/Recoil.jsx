@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback } from "react";
 import { RecoilRoot, atom, useSetRecoilState, useRecoilValue } from "recoil";
 
 const counterState = atom({
@@ -11,7 +11,7 @@ function IncrementButton() {
   console.log("render IncrementButton");
   // useSetRecoilStateはAtomをsubscribeしない！
   const setCount = useSetRecoilState(counterState);
-  const increment = () => setCount((c) => c + 1);
+  const increment = useCallback(() => setCount((c) => c + 1), [setCount]);
   return <button onClick={increment}>+</button>;
 }
 
