@@ -4,6 +4,7 @@ import DivideContext from "./DivideContext";
 import DivideContextWithConstate from "./DivideContextWithConstate";
 import OneContext from "./OneContext";
 import OneContextWithReducer from "./OneContextWithReducer";
+import RecoilCountApp from "./Recoil";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,5 +27,7 @@ root.render(
       constateを使用（ボタンをクリックすると、1つのコンポーネントのみレンダリングされる）
     </h2>
     <DivideContextWithConstate />
+    <h2>Recoilを使用</h2>
+    <RecoilCountApp />
   </React.StrictMode>
 );
