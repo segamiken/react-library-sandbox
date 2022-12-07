@@ -1,6 +1,7 @@
 import { atom, useAtom } from "./jotai";
 import "./index.css";
 
+// countAtom is `{ "init": 0 }`
 const countAtom = atom(0);
 
 const Counter = () => {
