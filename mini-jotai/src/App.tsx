@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { atom, useAtom } from "./jotai";
+import "./index.css";
+
+// countAtom is `{ "init": 0 }`
+const countAtom = atom(0);
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useAtom(countAtom);
   const inc = () => setCount(count + 1);
   return (
     <div>
@@ -11,7 +15,7 @@ const Counter = () => {
 };
 
 const Counter2 = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useAtom(countAtom);
   const inc = () => setCount(count + 1);
   return (
     <div>
