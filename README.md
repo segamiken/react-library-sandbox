@@ -11,6 +11,12 @@ Reactのあれこれを試す場所
   - ステートの実態をStoreで管理してみる https://github.com/segamiken/react-sandbox/pull/5
   - React Redux の useSelectorを作ってみる https://github.com/segamiken/react-sandbox/pull/6
 
+- Jotai（mini-jotai)
+  - Jotaiのコアのコードを30行程度で表現する https://github.com/segamiken/react-sandbox/pull/8
+
+- Zustand(mini-zustand)
+  - Zustandのコアのコードを40行程度で表現する https://github.com/segamiken/react-sandbox/pull/9
+
 - React Query（react-query-sandbox）
 - Suspense（react-suspense-handson）
 ---
