@@ -17,12 +17,12 @@ Reactのあれこれを試す場所
 - Zustand(mini-zustand)
   - Zustandのコアのコードを40行程度で表現する https://github.com/segamiken/react-sandbox/pull/9
 
-- React Query（react-query-sandbox）
-- Suspense（react-suspense-handson）
+- React Query （react-query-sandbox）
+- Suspense （react-suspense-handson）
+- Vite （vite-practice）
+
 ---
 今後
 
-- SWR
 - GraphQL
 - MSW
-- Vite
